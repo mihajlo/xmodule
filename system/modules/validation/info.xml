@@ -1,6 +1,10 @@
 <module>
     <name>Validation</name>
-    <description>Validation module can validate a lot validation things like e-mail url etc...</description>
+    <description>This class forms the base class for validation and sanitization of variables from userland. The class provides many standard validation for any type of input from POST, GET, CLI etc. The class accepts input via the addRule method, or will accept and array of rules with the addRules() method.
+<br>
+Upon validation, variables are checked and errors are stored in an errors array while variables that pass validation are stored in the sanitized array. This is ideal if you need to report back errors from input, such as a form, and at the same time, re-populate form fields that have passed validation.
+<br>
+This release adds method chaining to the addRule() method and also provides a trim option to trim variables that are submitted.</description>
     <example>
         <init>$validation=module('validation');</init>
         <return>$validation will be an object with methods for validating data.</return>
