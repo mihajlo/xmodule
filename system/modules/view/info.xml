@@ -1,0 +1,31 @@
+<module>
+    <name>View</name>
+    <description>View module can be used for loading view or parts of view on some page.</description>
+    <example>
+        <init>$view=module('view');</init>
+        <return>$view will return object with a 2 methods: "load" and "get". Every method has 2 arguments: path to template file and data needs on view.</return>
+        <code>
+            <pre>
+<?php
+    
+    //init view module
+    $view=module('view');
+    
+    //example of use get() method
+    $content=$view->get('themes/dark/header.php',array('title'=>'Example website'));
+    echo $content
+    
+    //example of use load() method
+    $view->load('themes/dark/header.php',array('content'=>'...example content...'));
+                
+?>
+            </pre>
+        </code>
+        
+        
+    </example>
+</module>
+<author>
+    <name>Mihajlo Siljanoski</name>
+    <web>https://mk.linkedin.com/in/msiljanoski</web>
+</author>

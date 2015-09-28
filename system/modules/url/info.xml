@@ -1,0 +1,99 @@
+<module>
+    <name>URL</name>
+    <description>URL module can be used for URL helping, redirections, handling URI segments etc.</description>
+    <example>
+        <init>$url=module('url');</init>
+        <return>$url will return object with a lot methods.</return>
+        <code>
+            <pre>
+<?php
+    
+    //init url module
+    $url=module('url');
+    
+    //example of use base_url() method
+    $url->base_url();
+    
+    //will return base path of framework instalation ex. http://localhost/mysite/
+                
+?>
+            </pre>
+        </code>
+        
+        <code>
+            <pre>
+<?php
+    
+    //init url module
+    $url=module('url');
+    
+    //example of use current_url() method
+    $url->current_url();
+    
+    //will return current url path of currently opened page 
+    //ex. http://localhost/mysite/products/school/notebook?id=1
+                
+?>
+            </pre>
+        </code>
+        <code>
+            <pre>
+<?php
+    
+    //init url module
+    $url=module('url');
+    
+    //example of use site_url() method
+    $url->site_url('products/school');
+    
+    //will return base path with page URI path 
+    //ex. http://localhost/mysite/products/school
+                
+?>
+            </pre>
+        </code>
+        
+        <code>
+            <pre>
+<?php
+    
+    //init url module
+    $url=module('url');
+    
+    //example of use redirect() method
+    if(/* check for logged user */){
+        //some code
+    }
+    else{
+        $url->redirect('user/login');
+    }
+                
+?>
+            </pre>
+        </code>
+        
+        
+        <code>
+            <pre>
+<?php
+    
+    //init url module
+    $url=module('url');
+    
+    //example of use segment() method
+    $url_segment=$url->segment(4);
+    
+    //if we have url like this http://mypage.com/category/products/school/notebook/cart
+    //$url_segment will be notebook , 5 will be cart, 2 will be products etc...
+    
+                            
+?>
+            </pre>
+        </code>
+        
+    </example>
+</module>
+<author>
+    <name>Mihajlo Siljanoski</name>
+    <web>https://mk.linkedin.com/in/msiljanoski</web>
+</author>

@@ -1,0 +1,47 @@
+<module>
+    <name>Database</name>
+    <description>Database module for easy access database or generating queries via active records. Database connection can be set in app/config.php</description>
+    <example>
+        <init>$db=module('database');</init>
+        <return>$db will be object with all active records from <a href="http://www.codeigniter.com/userguide2/database/active_record.html" target="_blank">CodeIgniter Database class</a></return>
+        <code>
+            <pre>
+<?php
+                
+    $db=module('database');
+                
+    //selecting all posts from posts table
+    $posts=$db->query("SELECT * FROM posts")->result_array();
+                
+    print_r($posts);
+                
+?>
+            </pre>
+        </code>
+        <code>
+            <pre>
+<?php
+                
+    $db=module('database');
+                
+    //preparing data for insert
+    $for_insert=array(
+        'title'=>'Simple post title',
+        'description'=>'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...',
+        'created'=>date('Y-m-d H:i:s')
+    );
+                
+    //inserting record in posts table
+    if($db->insert('posts',$for_insert)){
+        echo 'record inserted in database';
+    }
+                
+?>
+            </pre>
+        </code>
+    </example>
+</module>
+<author>
+    <name>EllisLab, Inc.</name>
+    <web>https://ellislab.com/</web>
+</author>

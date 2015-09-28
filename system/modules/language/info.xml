@@ -1,0 +1,45 @@
+<module>
+    <name>Language</name>
+    <description>Language module is for easy adding multilanguage site logic. Language files can be stored in "app/languages/" folder and need to be JSON file.</description>
+    <example>
+        <init>$language=module('language');</init>
+        <return>$language will return object with all keys of language fales and method for loading diferent language.</return>
+        <code>
+            <pre>
+<?php
+                
+    $language=module('language');
+                
+    //loading language file
+    $language->load('en');
+                
+?>
+            </pre>
+        </code>
+        <code>
+            <pre>
+<?php
+                
+    //init language module
+    $language=module('language');
+                
+    //loading language file
+    $language->load('en');
+                
+    //adding language keys in $lang variable
+    $lang=$language->lang;
+                
+?>
+
+&lt;h1&gt;
+    <?php echo $lang->welcome; ?> - <?php echo $lang->site_name; ?>
+&lt;/h1&gt;
+
+            </pre>
+        </code>
+    </example>
+</module>
+<author>
+    <name>Mihajlo Siljanoski</name>
+    <web>https://mk.linkedin.com/in/msiljanoski</web>
+</author>

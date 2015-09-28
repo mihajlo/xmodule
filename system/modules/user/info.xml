@@ -1,0 +1,168 @@
+<module>
+    <name>User</name>
+    <description>With User module you can do a lot of things associated with users functionalities.</description>
+    <example>
+        <init>$user=module('user');</init>
+        <return>$user object will contains following methods:</return>
+        <code>
+            <pre>
+<?php
+    
+    //init user module , this also will create 2 tables in databse for users
+    $user=module('user');
+    
+    //example for creating new user
+    
+    $new_user = $user->create(
+        array(
+            'username' => 'testuser',
+            'password' => 't35tp@$w0rd',
+            //'role'=>'admin',//optional default is 'user'
+            'more' => array(  //optional if you like to add dynamicly more infos about that user
+                'email'=> 'john.smith@example123.mk',
+                'name' => 'John',
+                'surname' => 'Smith',
+                'address' => 'Partizanski Odredi bb',
+                'city' => 'Skopje',
+                'country' => 'Macedonia',
+                'another_field' => 'bla bla 1',
+                'and_another_field' => 'bla bla 2'
+            )
+        )
+    );
+    
+    //now printing inserted user data in database.
+    //note: password will be stored in db as an md5 hash string 
+    print_r($new_user);
+    
+?>
+            </pre>
+        </code>
+        
+        
+        
+        <code>
+            <pre>
+<?php
+    
+    //init user module 
+    $user=module('user');
+    
+    //example for updaing existing user.., very similar as insert
+    //first parametar is user_id we want to update
+    
+    $updateduser=$user->update(7,array(
+        'more'=>array(
+            'another_field'=>false,//to delete from more
+            'surname'=>'Smith',//to delete from more
+            'name'=>'George'
+        )
+    ));
+
+    //now printing updated user data in database.
+    print_r($updateduser);
+    
+?>
+            </pre>
+        </code>
+        
+        
+        
+        
+        
+        <code>
+            <pre>
+<?php
+    
+    //init user module 
+    $user=module('user');
+    
+    //example for deleting existing user..
+    //first parametar is user_id we want to delete
+    
+    $user->delete(4);
+    
+?>
+            </pre>
+        </code>
+        
+        
+        
+        <code>
+            <pre>
+<?php
+    
+    //init user module 
+    $user=module('user');
+    
+    //example for fatching user/s data from db..
+    //first parametar is user_id we want to fatch
+    
+    $oneUser = $user->get(7);
+    
+    print_r($users);
+    
+    //example if we like to fatch all users with role "admin"
+    
+    $users = $user->get('admin','role');
+    
+    print_r($users);
+    
+?>
+            </pre>
+        </code>
+        
+        
+        
+        <code>
+            <pre>
+<?php
+    
+    //init user module 
+    $user=module('user');
+    
+    //example for using "is_logged", "auth" and "get_auth_user" methods..
+    if(!$user->is_logged()){
+        if($user->auth('testuser','t35tp@$w0rd')){
+            print_r($user->get_auth_user());
+        }
+        else{
+            echo 'auth failed!';
+        }
+    }
+    
+?>
+            </pre>
+        </code>
+        
+        
+        
+        
+        
+        <code>
+            <pre>
+<?php
+    
+    //init user module 
+    $user=module('user');
+    
+    //init url module
+    $url=module('url');
+    
+    //example for using "destroy" user session method..
+    
+    if($url->segment(2)=='logout'){
+        $user->destroy();
+        $url->redirect('user/login');
+    }
+    
+?>
+            </pre>
+        </code>
+        
+    </example>
+</module>
+<author>
+    <name>Mihajlo Siljanoski</name>
+    <web>https://mk.linkedin.com/in/msiljanoski</web>
+</author>

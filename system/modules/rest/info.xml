@@ -1,0 +1,39 @@
+<module>
+    <name>Rest</name>
+    <description>Rest module will provide JSON response for API services or ajax calls.</description>
+    <example>
+        <init>$rest=module('rest');</init>
+        <return>$rest will be an object with "response()" method.</return>
+        <code>
+            <pre>
+<?php
+    
+    //init rest module
+    $rest=module('rest');
+    
+    //example of use for regular response
+    $rest->response(array('msg'=>'User registered!'));
+                
+?>
+            </pre>
+        </code>
+        <code>
+            <pre>
+<?php
+    
+    //init rest module
+    $rest=module('rest');
+    
+    //example of use for error response
+    $rest->response(array('msg'=>'User already registered!'),false);
+                
+?>
+
+            </pre>
+        </code>
+    </example>
+</module>
+<author>
+    <name>Mihajlo Siljanoski</name>
+    <web>https://mk.linkedin.com/in/msiljanoski</web>
+</author>
