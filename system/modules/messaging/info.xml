@@ -1,0 +1,51 @@
+<module>
+    <name>Messaging (v. 1.1)</name>
+    <description>With Messaging module you can easily make loong pooling or interval pooling messaging system and handle independent clients (html / android / iOS ...).</description>
+    <example>
+        <init>$msg=module('messaging');</init>
+        <return>$msg object will contains methods 'send' and 'get':</return>
+        <code>
+            <pre>
+<?php
+    
+    //init Messaging module , this also will create table in databse (if not exist) for clients messages <config_id>_msg
+    $msg=module('messaging');
+    
+    //example for sending message to some client_id //return is boolean (true/false)
+        
+    $msg->send($user['id'],'Hello!');
+        
+    $msg->send($user['id'],'How are you?');
+    
+    
+?>
+            </pre>
+        </code>
+        
+        
+        
+        <code>
+            <pre>
+<?php
+    
+     //init Messaging module , this also will create table in databse (if not exist) for clients messages <config_id>_msg
+    $msg=module('messaging');
+         
+    //example for handling messages of some client_id
+         
+    $msg->get($user['id']); //first return will be string: 'Hello!'
+         
+    $msg->get($user['id']); //second return will be string: 'How are you?'
+    
+?>
+            </pre>
+        </code>
+        
+        
+        
+    </example>
+</module>
+<author>
+    <name>Mihajlo Siljanoski</name>
+    <web>https://mk.linkedin.com/in/msiljanoski</web>
+</author>
