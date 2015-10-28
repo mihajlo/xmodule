@@ -1,7 +1,7 @@
 <?php
 
 class messaging {
-    
+     
     public function index(){
         
         global $db;
