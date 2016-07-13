@@ -1,0 +1,35 @@
+<module>
+    <name>jQuery <small style="color:orange;">(Comming in ver. 2.0+)</small></name>
+    <description>jQuery module will automaticaly download jquery JS library localy and will provide script tag with local path.</description>
+    <example>
+        <init>$jquery = module('jquery');</init>
+        <return>$jquery->load('1.12.4') will return string like &lt;script src=&quot;http://xmodule.eco.mk/cache/permanent/jquery/1.12.4.js&quot;&gt;&lt;/script&gt;</return>
+        <code>
+            <pre>
+<?php
+    //loading module           
+    $jquery = module('jquery');
+     
+?>
+            </pre>
+        </code>
+        <code>
+            <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+     &lt;?php echo $jquery-&gt;load(&#39;1.12.4&#39;);?&gt;
+     ...
+            </pre>
+        </code>
+        
+        
+        
+
+     
+    </example>
+</module>
+<author>
+    <name>Mihajlo Siljanoski</name>
+    <web>https://mk.linkedin.com/in/msiljanoski</web>
+</author>
