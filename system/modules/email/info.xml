@@ -1,0 +1,27 @@
+<module>
+    <name>Email <small style="color:orange;">(Comming in ver. 2.0+)</small></name>
+    <description>Sending email message class.</description>
+    <example>
+        <init>$email = module('email');</init>
+        <return>$email will return object of this simple email class..</return>
+        <code>
+            <pre>
+<?php
+                
+    $email = module('email');
+
+    $email->from_name='John Smith';
+    $email->from_email='j.smith@example.com';
+    $email->message='<p>Hey...,</p><p>This is an test message!</p>Best Regards,<br>John Smith</p>';
+
+    $email->send('example@example.com'); 
+                
+?>
+            </pre>
+        </code>
+    </example>
+</module>
+<author>
+    <name>Mihajlo Siljanoski</name>
+    <web>https://mk.linkedin.com/in/msiljanoski</web>
+</author>

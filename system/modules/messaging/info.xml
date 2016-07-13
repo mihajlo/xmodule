@@ -1,5 +1,5 @@
 <module>
-    <name>Messaging (v. 1.1)</name>
+    <name>Messaging <small>(v. 1.1+)</small></name>
     <description>With Messaging module you can easily make loong pooling or interval pooling messaging system and handle independent clients (html / android / iOS ...).</description>
     <example>
         <init>$msg=module('messaging');</init>

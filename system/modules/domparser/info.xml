@@ -1,0 +1,29 @@
+<module>
+    <name>Simple Dom Parser <small style="color:orange;">(Comming in ver. 2.0+)</small></name>
+    <description>A HTML DOM parser written in PHP5+ let you manipulate HTML in a very easy way!<br/>Require PHP 5+<br/>Supports invalid HTML.<br/>Find tags on an HTML page with selectors just like jQuery.<br/>Extract contents from HTML in a single line.</description>
+    <example>
+        <init>$parser = module('domparser');</init>
+        <return>$parser will return object with methods 'file_get_html' and 'str_get_html'.<br /><br />Full documentation on this link: <a href="http://simplehtmldom.sourceforge.net/manual.htm" target="_blank">http://simplehtmldom.sourceforge.net/manual.htm</a></return>
+        <code>
+            <pre>
+<?php
+    
+    //loading module
+    $parser = module('domparser');
+
+    //fatching html from url
+    $parser->html=$parser->file_get_html('https://xmodule.eco.mk/');
+
+    //finding div with id with value 'headerwrap', finding inside first h2 tag and innerHTML
+    echo $parser->html->find('div[id=headerwrap]',0)->find('h2',0)->innertext;
+                
+?>
+            </pre>
+        </code>
+     
+    </example>
+</module>
+<author>
+    <name>S.C. Chen, John Schlick, Rus Carroll</name>
+    <web>http://sourceforge.net/projects/simplehtmldom/</web>
+</author>
