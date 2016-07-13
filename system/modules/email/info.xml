@@ -1,5 +1,5 @@
 <module>
-    <name>Email <small>(ver. 2.0+)</name>
+    <name>Email <small>(ver. 2.0+)</small></name>
     <description>Sending email message class.</description>
     <example>
         <init>$email = module('email');</init>

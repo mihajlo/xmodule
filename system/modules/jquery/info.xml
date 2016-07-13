@@ -1,5 +1,5 @@
 <module>
-    <name>jQuery <small>(ver. 2.0+)</name>
+    <name>jQuery <small>(ver. 2.0+)</small></name>
     <description>jQuery module will automaticaly download jquery JS library localy and will provide script tag with local path.</description>
     <example>
         <init>$jquery = module('jquery');</init>
