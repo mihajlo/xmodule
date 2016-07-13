@@ -1,5 +1,5 @@
 <module>
-    <name>Simple Dom Parser <small style="color:orange;">(Comming in ver. 2.0+)</small></name>
+    <name>Simple Dom Parser <small>(ver. 2.0+)</small></name>
     <description>A HTML DOM parser written in PHP5+ let you manipulate HTML in a very easy way!<br/>Require PHP 5+<br/>Supports invalid HTML.<br/>Find tags on an HTML page with selectors just like jQuery.<br/>Extract contents from HTML in a single line.</description>
     <example>
         <init>$parser = module('domparser');</init>

@@ -1,5 +1,5 @@
 <module>
-    <name>Email <small style="color:orange;">(Comming in ver. 2.0+)</small></name>
+    <name>Email <small>(ver. 2.0+)</name>
     <description>Sending email message class.</description>
     <example>
         <init>$email = module('email');</init>
