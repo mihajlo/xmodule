@@ -12,8 +12,8 @@ $config['default']=array(
     'database'=>array(
         'hostname'=>'localhost:3306',
         'username'=>'root',
-        'password'=>'root',
-        'database'=>'testdatabase',
+        'password'=>'',
+        'database'=>'',
         'driver'=>'mysqli',
         'load'=>FALSE 
     ),

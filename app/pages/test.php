@@ -1,4 +1,5 @@
 <?php
 
-$jquery = module('jquery');
 
+
+echo 'TEST PAGE';
