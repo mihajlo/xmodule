@@ -2,8 +2,9 @@
 
 //Default configuration
 $config['default']=array(
-    'appId'=>'x1',
-    
+    'site_name'=>'Example site name',
+    'appId'=>'mysite',
+    'version'=>'2.1',
     //environment configuration ex('development','test','production')
     'environment'=>'development',
     
@@ -13,7 +14,7 @@ $config['default']=array(
         'hostname'=>'localhost:3306',
         'username'=>'root',
         'password'=>'',
-        'database'=>'',
+        'database'=>'example',
         'driver'=>'mysqli',
         'load'=>FALSE 
     ),

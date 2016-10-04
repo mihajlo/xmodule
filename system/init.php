@@ -1,4 +1,10 @@
 <?php
+if(strtolower(@$_SERVER['REQUEST_METHOD'])!='delete' && strtolower(@$_SERVER['REQUEST_METHOD'])!='post' && strtolower(@$_SERVER['REQUEST_METHOD'])!='get'){
+            @header('HTTP/1.1 405 Method Not Allowed');
+            echo 'Method Not Allowed';
+            exit;
+}
+
 define('BASEPATH', realpath(dirname(__FILE__)).'/');
 define('APPPATH', realpath('.').'/app/');
 define('SYSTEMPATH', realpath('.').'/system/');

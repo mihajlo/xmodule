@@ -37,6 +37,7 @@ class url {
         else{
             @header('Location:'.$this->base_url().$path);
         }
+        exit;
     }
 
 }

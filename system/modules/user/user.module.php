@@ -138,8 +138,9 @@ class user {
             }
         }
         unset($user['more']);
-        $user['password']=md5($config['appId'].'_'.$user['password'].'_pswd');
-        
+        if($user['password']){
+            $user['password']=md5($config['appId'].'_'.$user['password'].'_pswd');
+        }       
         $keyUpdate=false;
         if(@$user['username']){
             $keyUpdate=true;
