@@ -19,6 +19,8 @@ $config['default']=array(
         'load'=>FALSE 
     ),
     
+    'storage_id'=>'mysite_storage',
+    
     //set default page
     'page'=>'home',
     

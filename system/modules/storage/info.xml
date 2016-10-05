@@ -1,0 +1,189 @@
+<module>
+    <name>Storage (non-sql database) <small>(v. 2.5+)</small></name>
+    <description>Storage is another type of filesystem non-sql database. With storage you can easily and on very fast way access and store your data.</description>
+    <example>
+        <init>$storage=module('storage');</init>
+        <return>$storage will be an object with all methods of storage module.</return>
+        <code>
+            <pre>
+<?php
+    
+    //init storage module
+    $storage=module('storage');
+                
+?>
+            </pre>
+        </code>
+        <code>
+            <pre>
+<?php
+    
+    //if you like to create user table
+    $storage->create_table('user');
+                
+?>
+
+            </pre>
+        </code>
+        <code>
+            <pre>
+<?php
+    
+    //if you like to add record in user table. 
+    //if table user doesn't exist automaticaly will be created
+    $storage->insert(
+        'user',
+        [
+            'name'=>'Mihajlo',
+            'surname'=>'Siljanoski',
+            'web'=>'https://mk.linkedin.com/in/msiljanoski',
+            'username'=>'admin',
+            'password'=>md5('admin')
+        ]
+    );
+                
+?>
+
+            </pre>
+        </code>
+        <code>
+            <pre>
+<?php
+    
+    //to update record in user table
+    $storage->update(
+        'user',
+        [
+            'surname'=>'Siljanoski updated',
+            'web'=>false, //web will be deleted
+            'address'=>'Test address' //address will be added
+        ], 
+        ['_id'=>1,'name%'=>'mihajlo'] // where ID =1 AND name LIKE '%mihajlo%'
+    );
+                
+?>
+
+            </pre>
+        </code>
+        <code>
+            <pre>
+<?php
+    
+    //to delete record with _id=5
+    $storage->delete(
+        'user',
+        ['_id'=>5]
+    );
+                
+?>
+
+            </pre>
+        </code>
+        <code>
+            <pre>
+<?php
+    
+    //fetch records from database something like SELECT * FROM users WHERE name='Mihajlo' AND surname LIKE '%ski%'
+    $results=$storage->get(
+        'user',
+        [
+            'name'=>'Mihajlo',
+            'surname%'=>'ski',
+        ]
+    );
+    
+    print_r($results); 
+                
+?>
+
+            </pre>
+        </code>
+        <code>
+            <pre>
+<?php
+    
+    //to drop database
+    $storage->drop_database();
+    
+    //to drop table
+    $storage->drop_table('user'); 
+                
+?>
+
+            </pre>
+        </code>
+        <code>
+            <pre>
+<?php
+    
+    //example for adding in two tables (relation) at once posts and users
+    $storage->insert(
+        'posts',
+        [
+            'title'=>'Example title',
+            'description'=>'Example description will appear here',
+            'author_id'=>$fdb->insert('users',['name'=>'Mihajlo','surname'=>'Siljanoski'],true)->_id  
+        ]
+    );
+                
+?>
+
+            </pre>
+        </code>
+        <code>
+            <pre>
+<?php
+    
+    //example of fetching results from 2 tables with relations at once (structured resultset)
+    $result=$storage->get(
+        'posts',
+        [
+            '_id'=>15
+        ],
+        ['author_id'=>['users','_id']]
+    );
+
+    print_r($result);
+                
+?>
+
+            </pre>
+        </code>
+        <code>
+            <pre>
+<?php
+    
+    //example of using as free storage
+    //save method can be used for insert and update of the record unique is second paremeter in this example "mihajlo.siljanoski"
+    $storage->save(
+        'users',
+        'mihajlo.siljanoski',
+        [
+            'gender'=>'male',
+            'username'=>'mihajlo.siljanoski',
+            'city'=>'Skopje',
+            'country'=>'Macedonia'
+        ]
+    );
+    
+    //to remove record from free storage
+    $storage->remove('users','mihajlo.siljanoski');
+    
+    //to read key content from free storage
+    $user=$storage->read('users','mihajlo.siljanoski');
+    print_r($user);
+    
+    //to list keys from free storage
+    $users=$storage->read('users');
+    print_r($users);
+                
+?>
+
+            </pre>
+        </code>
+    </example>
+</module>
+<author>
+    <name>Mihajlo Siljanoski</name>
+    <web>https://github.com/mihajlo/file-database/releases/tag/v1.0</web>
+</author>
