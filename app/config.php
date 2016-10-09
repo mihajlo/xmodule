@@ -4,7 +4,7 @@
 $config['default']=array(
     'site_name'=>'Example site name',
     'appId'=>'mysite',
-    'version'=>'2.5',
+    'version'=>'2.6',
     //environment configuration ex('development','test','production')
     'environment'=>'development',
     
