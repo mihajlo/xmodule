@@ -1,0 +1,33 @@
+<module>
+    <name>Google Translate <small>(v. 2.6+)</small></name>
+    <description>Google Translate Xmodule module who can use Google webpage to translate words and short sentence.</description>
+    <example>
+        <init>$gt=module('googletranslate');</init>
+        <return>$gt will be an object with all methods of Google Translate module.</return>
+        <code>
+            <pre>
+<?php
+    
+    //init Google Translate module
+    $gt=module('googletranslate');
+                
+?>
+            </pre>
+        </code>
+        <code>
+            <pre>
+<?php
+    
+    //example of usage
+    echo $gt->translate('Hello, how are you?', 'mk','en');
+                
+?>
+
+            </pre>
+        </code>
+    </example>
+</module>
+<author>
+    <name>Mihajlo Siljanoski</name>
+    <web>http://www.phpclasses.org/package/9974.html</web>
+</author>
