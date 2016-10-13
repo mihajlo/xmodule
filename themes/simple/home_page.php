@@ -35,7 +35,6 @@ background-size: 100% 500%;
 </style>
 </head>
 <body>
-    <p><img src="https://xmodule.eco.mk/themes/simple/images/xmodule.png" /></p>
 <?php echo $hmodule->h1('Welcome to Xmodule '.$config['version']);?>
 <h3>This is first (default) page</h3>
 <p><a href="<?php echo $documentation_link;?>" target="_blank">Online documentation</a></p>

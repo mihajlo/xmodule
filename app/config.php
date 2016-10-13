@@ -3,8 +3,8 @@
 //Default configuration
 $config['default']=array(
     'site_name'=>'Example site name',
-    'appId'=>'mysite',
-    'version'=>'2.6',
+    'appId'=>'myproject',
+    'version'=>'2.7',
     //environment configuration ex('development','test','production')
     'environment'=>'development',
     
