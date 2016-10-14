@@ -1,4 +1,9 @@
 <?php
+
+if($config['environment']!='development'){
+    exit();
+}
+
 $url = module('url');
 $jq = module('jquery');
 
